@@ -12,7 +12,7 @@ Basis is a new robotics framework focused on sane defaults and maintainability a
         - easier interop with other services (a ROS bridge node can send out messages in ROS native format)
 - Modification and forking encouraged
     - Plugins/Extensions will cover as many bases as we can
-    - There will always be some feature that we don't support - it should be easy to add some fix or feature without having to 
+    - There will always be some feature that we don't support - it should be easy to add some fix, upgrade, or feature without building and managing debians
 - Maintainability, even with large codebases
     - Sane defaults
     - Easy robot configuration
