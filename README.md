@@ -9,7 +9,7 @@ Basis is a new robotics framework focused on sane defaults and maintainability a
 - Compatibility with a wide variety of serialization formats 
     - You pick the message format that fits your needs. This enables:
         - converting your message serializer over time (rather than all at once)
-        - easier interop with other services (a ROS bridge node can send out messages in ROS native format)
+        - easier interop with other services (a ROS bridge node can send out messages in ROS native format, sensors can expose messages as native packets)
 - Modification and forking encouraged
     - Plugins/Extensions will cover as many bases as we can
     - There will always be some feature that we don't support - it should be easy to add some fix, upgrade, or feature without building and managing debians
