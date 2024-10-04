@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=ubuntu:22.04
-FROM $BASE_IMAGE AS node
+FROM $BASE_IMAGE AS basis-docs
 
 WORKDIR /basis_doc
 
@@ -17,12 +17,13 @@ ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 RUN . "$NVM_DIR/nvm.sh" && npm install docusaurus
 
-# Build
-# docker build --tag node --target node -f .\Dockerfile.dockerfile .
 #
-# Run
-# docker run -v C:\Users\thoma\source\repos\basis-docs:/basis_doc  -p 4000:4000 --name basis_doc --rm -it node /bin/bash 
-# From the container:
+# --- Build:
+# docker build --tag basis-docs --target basis-docs -f Dockerfile .
 #
+# --- Start Docker container:
+# docker run -v C:\Users\thoma\source\repos\basis-docs:/basis_doc  -p 4000:4000 --name basis-docs --rm -it basis-docs /bin/bash 
+#
+# --- Run docusaurus:
 # cd /basis_doc/docs
-# npm run start -- --host 0.0.0.0 --port 4000
+# ./start.sh
