@@ -15,11 +15,14 @@ In this guide, you will explore:
 ## Developer Guide
 - [**Units**](guide-concepts/unit): The fundamental components in Basis that encapsulate functionality and define how your system interacts with messages, topics, and other Units.
 - [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
-- [**Synchronizers**](guide-concepts/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages in a consistent and synchronized manner.
+in a consistent and synchronized manner.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
-- [**Launch files**](guide-concepts/launch-files): Launch configuration files.
 
-## Tools
+## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
+- [**Launch files**](guide-tools/launch-files): Launch configuration files.
+- [**Unit YAML schema**](guide-tools/unit-yaml-schema): Launch configuration files.
 
+## Advanced features
+- [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages 
 This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.

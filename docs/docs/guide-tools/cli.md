@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Command-Line Interface (CLI)
@@ -39,7 +39,7 @@ The `topic` command provides information about topics within the Basis system.
 
 The `schema` command provides information about schemas used within the Basis system.
 
-- **`ls`**: (To be implemented) Will list the available schemas.
+- **`ls`**: Will list the available schemas.
   
 - **`print`**: Prints the structure of a specified schema.
   - **Argument**: `schema` (The name of the schema)

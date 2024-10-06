@@ -63,19 +63,6 @@ const config = {
           src: 'img/basis.png',
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'docsSidebar',
-          //   position: 'left',
-          //   label: 'Guide',
-          // },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   //TODO: Change this to the correct URL
-          //   href: 'https://github.com/basis-robotics/basis-examples',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
         ],
       },
       footer: {
