@@ -17,6 +17,7 @@ In this guide, you will explore:
 - [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
 in a consistent and synchronized manner.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
+- [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
 
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
