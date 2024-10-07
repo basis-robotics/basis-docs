@@ -21,7 +21,7 @@ in a consistent and synchronized manner.
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
 - [**Launch files**](guide-tools/launch-files): Launch configuration files.
-- [**Unit YAML schema**](guide-tools/unit-yaml-schema): Launch configuration files.
+- [**Unit YAML schema**](guide-tools/unit-yaml-schema): Unit definition file.
 
 ## Advanced features
 - [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages 

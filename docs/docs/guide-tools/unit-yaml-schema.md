@@ -49,17 +49,6 @@ In each input, the `sync_field` property specifies how the field is accessed for
 
   This corresponds to the code `msg->width`, directly accessing the `width` field in the `sensor_msgs::Image` message.
 
-- **Method Field**: If a method is used to retrieve the field, you can specify the method in the `sync_field`. For example:
-
-  ```yaml
-  inputs:
-    /lidar: 
-      type: protobuf:LidarMessage 
-      sync_field: ::NumBeams()
-  ```
-
-  This translates to calling the method `msg->NumBeams()` in the `protobuf:LidarMessage` message.
-
 - **Lambda Transformation**: For more complex cases where a transformation or combination of fields is required, you can use a lambda function. For example:
 
   ```yaml
