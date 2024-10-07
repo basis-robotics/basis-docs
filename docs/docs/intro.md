@@ -27,3 +27,6 @@ in a consistent and synchronized manner.
 ## Advanced features
 - [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages 
 This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.
+- [**Pub/sub by hand**](guide-advanced/pubsub-by-hand): How to create publishers and subscribers at runtime. 
+
+This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.
