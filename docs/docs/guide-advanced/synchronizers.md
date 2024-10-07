@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
 # Synchronizers
 In Basis, **synchronizers** define the conditions under which messages are considered "in sync" and can be delivered to the Unit. Each synchronizer operates on multiple inputs, determining when the system can proceed with synchronized data. These inputs can be marked as either *optional* or *non-optional*, where only the non-optional inputs are required to meet the synchronizer's criteria. Optional inputs are passed through but do not influence the readiness of the synchronizer.
