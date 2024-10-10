@@ -6,4 +6,4 @@ if [[ "$1" == "clear" ]]; then
 fi
 
 echo -e "\n\n\n\n\nStarting the server...\n"
-npm run start -- --host 0.0.0.0 --port 4000\
+npm run start -- --host 0.0.0.0 --port 4000

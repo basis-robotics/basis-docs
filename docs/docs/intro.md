@@ -12,12 +12,15 @@ Welcome to the Basis framework guide. This documentation will introduce you to t
 
 In this guide, you will explore:
 
-## Developer Guide
+## Concepts
 - [**Units**](guide-concepts/unit): The fundamental components in Basis that encapsulate functionality and define how your system interacts with messages, topics, and other Units.
 - [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
 in a consistent and synchronized manner.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
 - [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
+
+## Getting started
+- [**Install, build and test**](guide-getting-started/install): Install Basis, build the code and verify that it works
 
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
