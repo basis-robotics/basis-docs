@@ -73,7 +73,7 @@ const config = {
             items: [
               {
                 label: 'Guide',
-                to: '/docs/intro.md',
+                to: '/',
               },
             ],
           },
