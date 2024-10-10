@@ -1,8 +1,4 @@
 name: Test deployment
-defaults:
-  run:
-    shell: bash
-    working-directory: ./docs
 
 on:
   pull_request:
@@ -11,6 +7,9 @@ on:
 
 jobs:
   test-deploy:
+    defaults:
+      run:
+        working-directory: ./docs
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
