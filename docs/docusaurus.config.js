@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/basis.png',
 
   // Set the production url of your site here
-  url: 'https://basisrobotics.tech',
+  url: 'https://docs.basisrobotics.tech',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -40,29 +40,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            //TODO: Change this to the correct URL
-            'https://github.com/basis-robotics/basis-examples',
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     //TODO: Change this to the correct URL
-        //     'https://github.com/basis-robotics/basis-examples',
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -83,19 +64,6 @@ const config = {
           srcDark: 'img/bug-dark.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'docsSidebar',
-            position: 'left',
-            label: 'Guide',
-          },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   //TODO: Change this to the correct URL
-          //   href: 'https://github.com/basis-robotics/basis-examples',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
         ],
       },
       footer: {
@@ -106,7 +74,7 @@ const config = {
             items: [
               {
                 label: 'Guide',
-                to: '/docs/intro',
+                to: '/',
               },
             ],
           },

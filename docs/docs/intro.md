@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+slug: /
+hide_table_of_contents: true
+hide_title: true
+breadcrumbs: false
+
 ---
 # Introduction to Basis
 
@@ -7,14 +12,24 @@ Welcome to the Basis framework guide. This documentation will introduce you to t
 
 In this guide, you will explore:
 
-## Developer Guide
+## Concepts
 - [**Units**](guide-concepts/unit): The fundamental components in Basis that encapsulate functionality and define how your system interacts with messages, topics, and other Units.
 - [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
-- [**Synchronizers**](guide-concepts/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages in a consistent and synchronized manner.
+in a consistent and synchronized manner.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
-- [**Launch files**](guide-concepts/launch-files): Launch configuration files.
+- [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
 
-## Tools
+## Getting started
+- [**Install, build and test**](guide-getting-started/install): Install Basis, build the code and verify that it works
+
+## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
+- [**Launch files**](guide-tools/launch-files): Launch configuration files.
+- [**Unit YAML schema**](guide-tools/unit-yaml-schema): Unit definition file.
+
+## Advanced features
+- [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages 
+This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.
+- [**Pub/sub by hand**](guide-advanced/pubsub-by-hand): How to create publishers and subscribers at runtime. 
 
 This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.
