@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -60,7 +60,8 @@ const config = {
         title: 'Basis',
         logo: {
           alt: 'Basis Logo',
-          src: 'img/basis.png',
+          src: 'img/bug-light.svg',
+          srcDark: 'img/bug-dark.svg',
         },
         items: [
         ],
