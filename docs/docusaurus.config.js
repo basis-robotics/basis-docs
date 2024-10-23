@@ -83,14 +83,8 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                //TODO: Change this to the correct URL
-                href: 'https://discordapp.com/invite/basis',
-              },
-              {
-                label: 'Twitter',
-                //TODO: Change this to the correct URL
-                href: 'https://twitter.com/basis',
-              },
+                href: 'https://discord.gg/8bzvASNPZ8',
+              }
             ],
           },
           {
@@ -102,7 +96,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/basis-robotics/basis-examples',
+                href: 'https://github.com/basis-robotics/basis',
               },
             ],
           },
