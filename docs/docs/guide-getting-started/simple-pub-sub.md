@@ -268,14 +268,24 @@ Another way to run our code is to use the Basis launcher. The launcher requires 
 Two processes with one thread each (`launch_two_process.yaml`):
 
 ```yaml
-processes:
-  demo_pub:
+recording:
+  directory: /tmp/
+  # list of glob expressions to match topics to
+  topics:
+    - /chatter
+    - /log
+groups:
+  simple_pub:
+    process: True
     units:
       simple_pub: {}
   simple_sub:
+    process: True
     units:
       simple_sub: {}
 ```
+
+Note: The `recording` section is optional. Its purpose is to specify the topic the recorder will use. The recorder saves messages in an MCAP log, which can later be used for replay.
 
 Launching:
 ```sh
@@ -285,8 +295,15 @@ basis launch launch_two_process.yaml
 
 Two threads within one process (`launch_single_process.yaml`):
 ```yaml
-processes:
-  demo:
+recording:
+  directory: /tmp/
+  # list of glob expressions to match topics to
+  topics:
+    - /chatter
+    - /log
+groups:
+  simple_pub_sub:
+    process: False
     units:
       simple_pub: {}
       simple_sub: {}
