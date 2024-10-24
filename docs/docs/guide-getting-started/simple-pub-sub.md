@@ -303,7 +303,6 @@ recording:
     - /log
 groups:
   simple_pub_sub:
-    process: False
     units:
       simple_pub: {}
       simple_sub: {}
