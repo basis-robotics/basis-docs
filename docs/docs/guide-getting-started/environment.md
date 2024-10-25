@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ## Creating your project's environment
 
-<talk about docker vs host>
+Docker is encouraged for development use. In production you may want to build or deploy directly to the robot host system, which won't be covered in this tutorial.
 
 ### Docker
 
