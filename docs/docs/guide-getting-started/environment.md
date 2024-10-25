@@ -1,9 +1,23 @@
 ---
 sidebar_position: 1
 ---
+
 # Creating your new project
 
-<talk about folder structure>
+Basis does not impose any requirements on folder structure for your project. We do encourage a few practices such as separating out library code from unit code.
+
+Here's one example folder structure
+```bash
+docs/ # Project documentation
+docker/ # Dockerfile for the project, along with docker specific artifacts
+launch/ # Launch files used by the project
+lib/ # Library code shared by units
+unit/ # Unit definitions and implementations
+.gitignore
+CMakeLists.txt # Top level CMake file for the project
+README.md
+LICENSE
+```
 
 ## Creating your project's environment
 
