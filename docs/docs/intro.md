@@ -20,7 +20,7 @@ in a consistent and synchronized manner.
 - [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
 
 ## Getting started
-- [**Install, build and test**](guide-getting-started/install): Install Basis, build the code and verify that it works
+- [**Install, build and test**](guide-getting-started/): Install Basis, build the code and verify that it works
 
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.

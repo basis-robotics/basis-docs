@@ -30,6 +30,7 @@ docs/ # Project documentation
 docker/ # Dockerfile for the project, along with docker specific artifacts
 launch/ # Launch files used by the project
 lib/ # Library code shared by units
+proto/ # Protobuf definitions
 unit/ # Unit definitions and implementations
 .gitignore
 CMakeLists.txt # Top level CMake file for the project
