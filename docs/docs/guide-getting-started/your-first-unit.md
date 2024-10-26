@@ -257,6 +257,10 @@ $ ./simple_sub
 
 Another way to run our code is to use the Basis launcher. The launcher requires a configuration file to specify how the units will be composed and which arguments they will take. Here we will look at how we can use the configuration file to run the publisher and subscriber either as two processes or as two threads within one process.
 
+We recommend storing your launch files in a central directory, for better discoverability.
+
+### Two processes
+
 Two processes with one thread each (`launch_two_process.yaml`):
 
 ```yaml title="launch/launch_two_process.yaml"
@@ -284,8 +288,9 @@ Launching:
 basis launch launch/launch_two_process.yaml
 ```
 
+### Single process
 
-Two threads within one process (`launch_single_process.yaml`):
+Two units within one process (`launch_single_process.yaml`):
 ```yaml title="launch/launch_single_process.yaml"
 recording:
   directory: /tmp/

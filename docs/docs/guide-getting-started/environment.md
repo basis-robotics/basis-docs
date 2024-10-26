@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 1. Setting up your project's environment
 
-## Obtaining the Basis Codebase
+## Get Basis
 
 The Basis framework's Git repository is available at [https://github.com/basis-robotics/basis](https://github.com/basis-robotics/basis)
 
