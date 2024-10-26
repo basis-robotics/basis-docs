@@ -2,7 +2,25 @@
 sidebar_position: 1
 ---
 
-# Creating your new project
+# 1. Setting up your project's environment
+
+## Obtaining the Basis Codebase
+
+The Basis framework's Git repository is available at [https://github.com/basis-robotics/basis](https://github.com/basis-robotics/basis)
+
+To clone the repository using the command line:
+```bash
+git clone git@github.com:basis-robotics/basis.git
+```
+
+Alternatively, using GitHub CLI:
+```bash
+gh repo clone basis-robotics/basis
+```
+
+For ease of development, it's recommended to check out basis alongside your project's directory as a sibling. Alternatively, basis can be referenced as a git submodule, or even downloaded solely via CMake FetchContent.
+
+## Creating your new project
 
 Basis does not impose any requirements on folder structure for your project. We do encourage a few practices such as separating out library code from unit code.
 
@@ -19,7 +37,7 @@ README.md
 LICENSE
 ```
 
-## Creating your project's environment
+## Creating an environment
 
 Docker is encouraged for development use. In production you may want to build or deploy directly to the robot host system, which won't be covered in this tutorial.
 
@@ -32,7 +50,9 @@ Our Dockerfile has two main arguments:
 - `BASE_IMAGE` - the base image to build on top of (defaulting to a recent version of `ubuntu`)
 - `BASIS_ENABLE_ROS` - used to enable ROS support (currently defaulting to `1`, this may change)
 
-See the scripts in https://github.com/basis-robotics/basis_test_robot/blob/main/docker/ for examples of automating this.
+See the scripts in https://github.com/basis-robotics/basis_test_robot/blob/main/docker/ for examples of automating this. One "easy" option is to run `BASIS_ENABLE_ROS=0 basis/docker/build-env.sh --build-arg BASE_IMAGE=ubuntu:focal` once to generate the base image (`basis-env`) once, and then either work within `basis-env` use your favorite Docker workflow of choice to build an image on top.
+
+Note: `basis/docker/run-env.sh` may not give correct permissions to modify mounted directories inside the container. Take care!
 
 ### Host
 

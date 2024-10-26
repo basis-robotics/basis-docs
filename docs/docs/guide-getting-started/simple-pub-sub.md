@@ -1,7 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
-# Simple publisher & subscriber
+
+# 3. Creating your first unit
+
+## Creating your first unit - a simple publisher & subscriber
 
 This tutorial will guide you through the steps to create a simple demo using a publisher and a subscriber. The publisher will send a text message every second, and the subscriber will print the message it receives. We'll use Basis’ code generator to create the skeleton code and boilerplate logic. While using the code generator is optional, it simplifies the implementation.
 
@@ -12,19 +15,6 @@ A process may contain one or more units. Here, the publisher and the subscriber 
 We'll use Protocol Buffers for message serialization. Basis also supports ROS natively and allows for the addition of other serialization methods, including custom ones.
 
 Since Basis uses clang++ 18 for compiling C++ code and CMake for building, we'll use them in this tutorial as well.
-
-## Foundation
-The first step is to create the foundation of our project. This includes creating the Protocol Buffers schema, the Basis units description, and the related CMake files. The initial layout of the folders and files will look like this:
-
-```
-.
-|-- CMakeLists.txt
-|-- proto
-|   |-- CMakeLists.txt
-|   `-- simple_pub_sub.proto
-|-- simple_pub.unit.yaml
-`-- simple_sub.unit.yaml
-```
 
 ### Protocol Buffers
 The first file to add is the Protocol Buffer message schema. Starting from the root of the project folder, we create the file `proto/simple_pub_sub.proto`:
