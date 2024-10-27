@@ -6,6 +6,10 @@ sidebar_position: 2
 
 In addition to using the code generator, developers can implement publishers and subscribers manually through the lower-level API, which is always available.
 
+:::warning
+Units created by hand won't have the required metadata for use with deterministic replay.
+:::
+
 ## Implementing a Publisher Manually
 
 To publish a message on the `/chatter` topic, you create a publisher by calling `Advertise` within the Unit:

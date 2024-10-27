@@ -4,6 +4,8 @@ sidebar_position: 4
 
 # Publishing / Subscribing
 
+At its core, Basis is a (pub/sub framework)[https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern]. Units and various tooling can send and receive messages on named topics. Each message has a type, and generally topics should only contain messages of one type.
+
 ## Publishing a Message on a Topic
 
 When using the code generator (the preferred method), publishing a message involves creating an instance of the generated `Output` struct and setting its fields accordingly. In the example below, we describe the publishing Unit using YAML and demonstrate how a message is published at a regular interval.

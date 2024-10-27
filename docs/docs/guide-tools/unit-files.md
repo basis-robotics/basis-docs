@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# Unit YAML Schema
+# Unit Files
 
 ### Overview
 This section describes the YAML schema for defining a Unit in Basis. The schema is used by the code generator to automatically create necessary boilerplate code, such as publishers and subscribers, based on the inputs provided. The Unit operates within a specified threading model and handles synchronization tasks through a set of inputs and outputs. The `args` section allows for the configuration of runtime parameters that are passed to the Unit by the Launcher during its creation.
@@ -17,7 +17,8 @@ The schema for a Basis Unit defines several key properties:
 - **cpp_includes**: A list of C++ headers required for the Unit’s implementation. This section specifies the additional include files for the Unit's operation; it is typically used for including the input and output message declarations.
 
 - **threading_model**: Defines the threading behavior of the Unit. It supports one model currently:
-  - `single`: All handlers run mutually exclusive from each other.
+  - `single`: All handlers run mutually exclusive from each other within a Unit.
+  - Future releases will add other threading models.
 
 - **handlers**: This section describes the message delivery logic, or handlers, that execute within the Unit. Each handler is defined by its synchronization type, which determines how and when the handler is triggered. The handler may require inputs to be satisfied, and it produces a set of outputs.
   
