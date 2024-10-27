@@ -60,7 +60,7 @@ add_subdirectory(unit)
 
 ## Compiling
 
-Follow these steps to build the your project (and the underlying framework)...
+Follow these steps to build your project (and the underlying framework)...
 
 From the root directory of your project:
 ```bash
