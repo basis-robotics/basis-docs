@@ -7,7 +7,5 @@ Please see [basis-examples/simple_pub_sub](https://github.com/basis-robotics/bas
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 
-import { useDocsSidebar } from '@docusaurus/theme-common/internal';
-
 <DocCardList />
 ```

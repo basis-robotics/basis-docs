@@ -12,7 +12,6 @@ Basis is a robotics development framework developed by Basis Robotics, designed 
 
 ## Concepts
 - [**Units**](guide-concepts/unit): The fundamental components in Basis that encapsulate functionality and define how your system interacts with messages, topics, and other Units.
-- [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
 - [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
 
@@ -22,7 +21,7 @@ Basis is a robotics development framework developed by Basis Robotics, designed 
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
 - [**Launch files**](guide-tools/launch-files): Launch configuration files.
-- [**Unit YAML schema**](guide-tools/unit-yaml-schema): Unit definition file.
+- [**Unit YAML schema**](guide-tools/unit-files): Unit definition file.
 
 ## Advanced features
 - [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages.
