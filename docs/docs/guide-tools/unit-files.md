@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 
-# Unit YAML Schema
+# Unit Files
 
 ### Overview
 This section describes the YAML schema for defining a Unit in Basis. The schema is used by the code generator to automatically create necessary boilerplate code, such as publishers and subscribers, based on the inputs provided. The Unit operates within a specified threading model and handles synchronization tasks through a set of inputs and outputs. The `args` section allows for the configuration of runtime parameters that are passed to the Unit by the Launcher during its creation.

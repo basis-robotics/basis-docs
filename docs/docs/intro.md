@@ -8,19 +8,16 @@ breadcrumbs: false
 ---
 # Introduction to Basis
 
-Welcome to the Basis framework guide. This documentation will introduce you to the core concepts and components of Basis, a development framework designed for building scalable and efficient robotics applications. Basis simplifies the development of systems that require communication between different processes, precise task synchronization, and efficient message handling, allowing you to focus on building the functionality your application needs.
-
-In this guide, you will explore:
+Basis is a robotics development framework developed by Basis Robotics, designed to accelerate your journey from concept to prototype, and from prototype to production. Many of the concepts will be familiar to ROS users, such as pub/sub-based communication, launch files, and a central coordinator. However, there are some aspects that we approach differently.
 
 ## Concepts
 - [**Units**](guide-concepts/unit): The fundamental components in Basis that encapsulate functionality and define how your system interacts with messages, topics, and other Units.
 - [**The Code Generator**](guide-concepts/code-generator): A tool that simplifies development by automatically generating code based on YAML configuration files, reducing the need for boilerplate code.
-in a consistent and synchronized manner.
 - [**Serialization**](guide-concepts/serialization): How messages are encoded and decoded when passed between different processes or systems.
 - [**Publishing / subscribing**](guide-concepts/pubsub): How to publish messages and subscribe to topics.
 
-## Getting started
-- [**Install, build and test**](guide-getting-started/): Install Basis, build the code and verify that it works
+## Getting Started
+- [**Install, build and test**](guide-getting-started/): Install Basis, build the code, and write your first units
 
 ## Tools and schemas
 - [**CLI Tools**](guide-tools/cli): Command-line utilities that help you manage, monitor, and launch Units and processes.
@@ -28,8 +25,5 @@ in a consistent and synchronized manner.
 - [**Unit YAML schema**](guide-tools/unit-yaml-schema): Unit definition file.
 
 ## Advanced features
-- [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages 
-This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.
+- [**Synchronizers**](guide-advanced/synchronizers): Mechanisms used to coordinate data flow and ensure that your system processes messages.
 - [**Pub/sub by hand**](guide-advanced/pubsub-by-hand): How to create publishers and subscribers at runtime. 
-
-This guide is designed to help you understand and effectively use Basis, offering explanations and practical examples as you build, configure, and maintain your robotics applications.

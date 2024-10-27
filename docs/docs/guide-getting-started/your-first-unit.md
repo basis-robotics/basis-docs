@@ -100,7 +100,7 @@ handlers:
         type: protobuf:StringMessage
 ```
 
-### First build
+### Skeleton creation
 We are now ready to set up the boilerplate code using Basis’ code generator. We will create a CMake for the publisher and one for the subscriber:
 
 ```CMake unit/simple_pub/CMakeLists.txt

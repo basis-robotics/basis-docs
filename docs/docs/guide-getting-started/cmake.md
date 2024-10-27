@@ -58,7 +58,7 @@ add_subdirectory(lib)
 add_subdirectory(unit)
 ```
 
-## Compiling, running
+## Compiling
 
 Follow these steps to build the your project (and the underlying framework)...
 
@@ -77,4 +77,41 @@ make -j
 sudo make install
 ```
 
-**TODO: running**
+## Running
+
+Let's ensure that basis is installed properly. You will need three separate terminals (`run-env.sh` invoked again will open a new shell into your docker container, if you don't want to run `tmux` or `screen`)
+
+```bash title="Start the Coordinator"
+coordinator
+```
+
+```bash title="Start Foxglove's bridge"
+foxglove_bridge
+```
+
+```bash title="Print the logging topic"
+basis topic print /log
+```
+
+If you're fast enough with the last command, you should see some output from the logger. Otherwise, either launch [Foxglove Studio](https://foxglove.dev/) or relaunch the bridge, and you should get output.
+
+```log
+basis@ubuntu:/basis/build$ basis topic print /log
+timestamp {
+  seconds: 3263274
+  nanos: 325340038
+}
+level: INFO
+message: "[1970-02-07 18:27:54.325] [FoxgloveBridge] [info] [foxglove_bridge.cpp:110] [WS] Client 127.0.0.1:57246 connected via /\n"
+name: "FoxgloveBridge"
+file: "/basis/cpp/plugins/bridges/foxglove/src/foxglove_bridge.cpp"
+line: 110
+```
+
+## Troubleshooting
+
+Coming soon, sorry!
+
+## Next
+
+Now that you have a valid basis environment and CMake project, [it's time to create your first units](your-first-unit).
