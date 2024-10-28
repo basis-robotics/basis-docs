@@ -97,7 +97,7 @@ The schema for a Basis Unit defines several key properties:
             type: equal
             # buffer at most 2 messages on each channel before dropping
             buffer_size: 2
-      '''
+      ```
 
   - **inputs**: A set of input topics that the handler waits for before execution. Each input is described by several properties, such as a synchronization field (`sync_field`), caching options, and whether the input allows or denies certain transport methods. Inputs are configured with a defined message type, and options such as accumulated data and quality of service (QoS) can be specified.
 
