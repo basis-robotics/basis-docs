@@ -169,15 +169,13 @@ Settings used for recording. Currently only used for the top level launch file i
 
 **⚠️ Recording syntax is WIP - future updates will enable features such as the ability to record to multiple files, more customizable names, and per process recording settings**
 
-#### directory
-The directory to write the records to. 
+### Recording Settings Properties
 
-### name
-The prefix of the record file. Generally, records will be named as `${name}_${process_name}_${timestamp}.mcap`
-
-#### topics
-
-A list of topic **globs** to be used as a filter when recording.
+| Property    | Description                                                                                                    |
+| ----------- | -------------------------------------------------------------------------------------------------------------- |
+| `directory` | The directory to write the records to.                                                                         |
+| `name`      | The prefix of the record file. Generally, records will be named as `${name}_${process_name}_${timestamp}.mcap` |
+| `topics`    | A list of topic **globs** to be used as a filter when recording.                                               |
 
 ### Group Definition
 
@@ -197,6 +195,13 @@ groups:
 ```
 
 A group is a collection of units. Groups may recursively define other groups. **The root of the document is a group named `/` with some special properties.**
+
+| Property  | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| `groups`  | Defines child groups for this group.                           |
+| `include` | Includes a child launch file. .                                |
+| `process` | When set to `true`, launches this group in a separate process. |
+| `units`   | Specifies the units to be launched within this group.          |
 
 #### groups
 
@@ -253,12 +258,14 @@ Units to launch in this group. See Unit Definition.
 
 A unit to run with this launch. The key the unit has in the `units` field is the name, and by default also the type.
 
-#### type
+### Unit Definition Properties
 
-default: (the name of the unit)
+| Property | Description                                                                      |
+| -------- | -------------------------------------------------------------------------------- |
+| `type`   | Specifies the type of the unit to be launched. Defaults to the name of the unit. |
+| `args`   | Specifies the arguments to be passed to the unit.                                |
 
-The type of unit to be launched. If not specified, will be the name of the unit.
 
-#### args:
-
-The arguments to be passed to the unit. Has the exact same semantics as launch file args, with type checking - the only difference is that they are in the content section of the launch file, and thus can be filled with templated values (including launch argument values). See [Argument Definition](#Argument Definition)
+:::note
+The `args` have exactly the same semantics as launch file arguments, including type checking. The only difference is that they are in the content section of the launch file and can be filled with templated values (including launch argument values). See [Argument Definition](#argument-definition).
+:::
