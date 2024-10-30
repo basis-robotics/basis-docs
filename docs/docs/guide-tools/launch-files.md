@@ -5,6 +5,46 @@ sidebar_position: 2
 # Launch files
 Basis launch files are yaml files consisting of one or two documents (separated by `---`). If there are two documents, the first is args, the second is content. If there is just one document, it's just content.
 
+
+```yaml
+#
+# Launch arguments declarataion
+#
+args:
+  ARG_A:
+    type: <TYPE>
+    default: <DEFAULT>
+    optional: <True/False>
+  ARG_B:
+    ...
+---
+
+#
+# Message logger
+#
+recording:
+  directory: <FOLDER>
+  name: <FILE_NAME_PREFIX>
+  topics:
+    - /TOPIC_1
+
+#
+# Launch configuaration
+#
+groups:
+  GROUP_!:
+    process: <True/False>
+    units:
+      UNIT_A:
+        args:
+          UNIT_A_ARG_1: <VALUE>
+          ...
+      UNIT_B: {}
+      ...
+  GROUP_2: 
+    ...
+```
+
 ## Args
 
 ```yaml
