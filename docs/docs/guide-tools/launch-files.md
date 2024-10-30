@@ -2,50 +2,74 @@
 sidebar_position: 2
 ---
 
-# Launch files
-Basis launch files are yaml files consisting of one or two documents (separated by `---`). If there are two documents, the first is args, the second is content. If there is just one document, it's just content.
+# Launch Files
 
+Basis launch files are YAML files used to define the launch configuration for a project. Each launch file can contain one or two documents, separated by `---`. If there are two documents, the first is for defining launch arguments (`args`), and the second is the main content of the launch (`content`). If there is only one document, it represents the launch content.
+
+### Structure of a Launch File
+
+A typical Basis launch file is organized as follows:
 
 ```yaml
-#
-# Launch arguments declarataion
-#
+# Launch arguments declaration
 args:
   ARG_A:
-    type: <TYPE>
-    default: <DEFAULT>
-    optional: <True/False>
+    type: <TYPE>                 # Data type of the argument (e.g., string, int)
+    default: <DEFAULT>           # Default value for the argument (optional)
+    optional: <True/False>       # Whether the argument is optional
+    help: "<HELP_STRING>"        # Optional description
+
   ARG_B:
     ...
+
 ---
 
-#
-# Message logger
-#
+# Message logger configuration
 recording:
-  directory: <FOLDER>
-  name: <FILE_NAME_PREFIX>
+  directory: <FOLDER>            # Directory where log files are stored
+  name: <FILE_NAME_PREFIX>       # Prefix for log file names
   topics:
-    - /TOPIC_1
+    - /TOPIC_1                   # List of topics to record
 
-#
-# Launch configuaration
-#
+# Launch configuration
+# Defines the groups and units to be launched
 groups:
-  GROUP_!:
-    process: <True/False>
+  GROUP_1:
+    process: <True/False>        # Whether the group runs in a separate process
     units:
       UNIT_A:
         args:
-          UNIT_A_ARG_1: <VALUE>
+          UNIT_A_ARG_1: <VALUE>  # Arguments for UNIT_A
           ...
-      UNIT_B: {}
+      UNIT_B: {}                 # UNIT_B without specific arguments
       ...
-  GROUP_2: 
+
+  GROUP_2:
     ...
 ```
 
-## Args
+### Explanation
+
+- **Arguments (`args`)**: Defines any arguments that can be passed to customize the launch. These arguments include their data type, default values, and whether they are optional.
+- **Recording Configuration (`recording`)**: Sets up message logging, specifying where to save recorded data and which topics to record.
+- **Groups and Units (`groups`)**: Describes the units (e.g., nodes or components) to be launched, organized in groups. Each group can be launched in its own process, and each unit within the group can have specific arguments.
+
+### Notes
+
+- Placeholder names like `ARG_A`, `GROUP_1`, `UNIT_A`, etc., should be replaced with project-specific names.
+- Values indicated with `<...>` should be customized according to your project's requirements.
+
+This structure allows you to clearly define the parameters, components, and behaviors of your application in a flexible and readable manner.
+
+### Document Structure
+
+A Basis launch file consists of the following sections:
+
+- **Arguments (`args`)**: Defines the configurable parameters for the launch.
+- **Launch Content**: Contains the main configuration, including message logging (`recording`) and group/unit definitions (`groups`).
+
+
+## Arguments
 
 ```yaml
 args: 
@@ -112,7 +136,7 @@ Don't throw an error when this argument isn't supplied.
 
 ## Launch content
 
-The data containing units to be launched and other information about the launch. This document is first preprocessed using `inja` - https://github.com/pantor/inja. Please see inja's documentation for usage - if you're familiar with `jinja2`, it's nearly the same. Jinja itself isn't used due to python dependency. `jinja2cpp` was also considered, but not used for now due to `boost` dependency.
+The data containing units to be launched and other information about the launch. This document is first preprocessed using `inja` - https://github.com/pantor/inja. Please see inja's documentation for usage - if you're familiar with `jinja2`, it's nearly the same. Jinja itself isn't used due to Python dependency. `jinja2cpp` was also considered, but not used for now due to `boost` dependency.
 
 Using inja enables lifting out functionality such as filtering and argument handling from the launch system to an already written preprocessor.
 
@@ -121,7 +145,7 @@ When preprocessing, all values for args will be supplied in an inja variable nam
 Some other notes:
  * inja currently requires double quotes `"` for strings, single quotes `'` are not allowed
  * inja doesn't use filter expressions like jinja - think `lower("MY_STRING")` instead of `"MY_STRING" | lower`.
- * Take care when using inja includes - they aren't well tested and are tricky to get correct with regular yaml syntax (consider using json style syntax in these cases)
+ * Take care when using inja includes - they aren't well tested and are tricky to get correct with regular YAML syntax (consider using json style syntax in these cases)
 
 ### Recording settings
 
