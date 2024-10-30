@@ -351,7 +351,7 @@ groups:
       type: string
       default: /camera
   ```
-- **Jinja Conditionals**:
+- **inja Conditionals**:
   - `{% if "additional_log_topic" in args %}` checks if the `additional_log_topic` argument is provided and, if so, includes it in the list of topics to be recorded.
   - `{% if args.enable_perception %}` conditionally adds the `perception_demo` unit if `enable_perception` is set to `true`.
 
