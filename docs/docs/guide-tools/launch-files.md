@@ -155,6 +155,7 @@ When preprocessing, all values for args will be supplied in an inja variable nam
 
 ### Recording settings
 
+Example of `recording` section:
 ```yaml
 recording:
   directory: /tmp/
@@ -164,11 +165,11 @@ recording:
     - */image/*
 ```
 
-Settings used for recording. Currently only used for the top level launch file in a launch. **Included recording settings are ignored** Recording settings are applied to every process in the launch.
+These settings control how messages are recorded to a file (MCAP) and currently apply only to the top-level launch file in a launch. **Recording settings from included files are ignored.** The recording settings are applied across all processes within the launch.
 
 **⚠️ Recording syntax is WIP - future updates will enable features such as the ability to record to multiple files, more customizable names, and per process recording settings**
 
-### Recording Settings Properties
+#### Recording Settings Properties
 
 | Property    | Description                                                                                                    |
 | ----------- | -------------------------------------------------------------------------------------------------------------- |
