@@ -50,7 +50,7 @@ groups:
 
 ### Explanation
 
-- **Arguments (`args`)**: Defines any arguments that can be passed to customize the launch. These arguments include their data type, default values, and whether they are optional.
+- **Arguments (`args`)**: Defines any arguments that can be passed to customize the launch. These arguments include their data type, default values, help message and whether they are optional.
 - **Recording Configuration (`recording`)**: Sets up message logging, specifying where to save recorded data and which topics to record.
 - **Groups and Units (`groups`)**: Describes the units (e.g., nodes or components) to be launched, organized in groups. Each group can be launched in its own process, and each unit within the group can have specific arguments.
 
@@ -59,7 +59,7 @@ groups:
 - Placeholder names like `ARG_A`, `GROUP_1`, `UNIT_A`, etc., should be replaced with project-specific names.
 - Values indicated with `<...>` should be customized according to your project's requirements.
 
-This structure allows you to clearly define the parameters, components, and behaviors of your application in a flexible and readable manner.
+This structure allows you to define the parameters, components, and behaviors of your application in a flexible and readable manner.
 
 ### Document Structure
 
@@ -71,6 +71,21 @@ A Basis launch file consists of the following sections:
 
 ## Arguments
 
+The `args` section of the configuration YAML file has the following structure:
+
+```yaml
+args: 
+  ARG_A:
+    type: <TYPE>                 # Data type of the argument (e.g., string, int)
+    default: <DEFAULT>           # Default value for the argument (optional)
+    optional: <True/False>       # Whether the argument is optional
+    help: "<HELP_STRING>"        # Optional description
+
+  ARG_B:
+    ...
+```
+
+Here is an example:
 ```yaml
 args: 
   camera_topic_namespace:
@@ -95,9 +110,16 @@ The args document must always contain a map named `args`. Currently, no other ke
 
 A single argument used for this launch file, with type safety. May be optional or supply a default.
 
-#### type
+| Argument Field | Description                                                                                         | Required | Default Value |
+| -------------- | --------------------------------------------------------------------------------------------------- | -------- | ------------- |
+| `type`         | The data type of the argument (e.g., string, float).                                                | Yes      | N/A           |
+| `default`      | The default value for the argument. Mutually exclusive with `optional`.                             | No       | N/A           |
+| `optional`     | Indicates if the argument is optional. Mutually exclusive with `default`.                           | No       | N/A           |
+| `help`         | A string describing the argument, used when displaying error messages about the required arguments. | No       | `""`          |
 
-The type to use for this argument. Any arguments passed to the launch file will be converted to these types, with range checking.
+:::note
+
+Any arguments passed to the launch file will be converted to these types, with range checking.
 
 * `bool` - `0`/`1`/`true`/`false`, case insensitive
 * `string` - any string (converted to `std::string`)
@@ -115,37 +137,22 @@ Any cpp integer type, with range checking:
 * `int32_t`
 * `uint64_t`
 * `int64_t`
-
-#### help
-
-Default: `""`
-
-A string describing this argument. Used when displaying error messages about the arguments a launch file requires. 
-
-#### default
-
-Mutually exclusive with `optional`
-
-When no user supplied value is supplied, this will be used. Must be convertable to `type`. There is currently no syntax for defaulting to the value of another arg, but use of inja variables can avoid this.
-
-#### optional
-
-Mutually exclusive with `default`
-
-Don't throw an error when this argument isn't supplied.
+:::
 
 ## Launch content
 
-The data containing units to be launched and other information about the launch. This document is first preprocessed using `inja` - https://github.com/pantor/inja. Please see inja's documentation for usage - if you're familiar with `jinja2`, it's nearly the same. Jinja itself isn't used due to Python dependency. `jinja2cpp` was also considered, but not used for now due to `boost` dependency.
+The launch content document contains information about the units to be launched, as well as other relevant launch information. Before being executed, this document is preprocessed using `inja` (see https://github.com/pantor/inja). Refer to Inja's documentation for usage guidelines. If you are familiar with `jinja2`, you will find Inja very similar. Jinja is not used here due to its Python dependency, and `jinja2cpp` was also considered but not selected due to its dependency on `boost`.
 
 Using inja enables lifting out functionality such as filtering and argument handling from the launch system to an already written preprocessor.
 
 When preprocessing, all values for args will be supplied in an inja variable named `args`. Future updates will add other variables.
 
+:::note
 Some other notes:
  * inja currently requires double quotes `"` for strings, single quotes `'` are not allowed
  * inja doesn't use filter expressions like jinja - think `lower("MY_STRING")` instead of `"MY_STRING" | lower`.
  * Take care when using inja includes - they aren't well tested and are tricky to get correct with regular YAML syntax (consider using json style syntax in these cases)
+:::
 
 ### Recording settings
 
