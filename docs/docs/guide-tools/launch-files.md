@@ -22,6 +22,7 @@ args:
   ARG_B:
     ...
 
+# Templating only allowed below this marker
 ---
 
 # Message logger configuration
@@ -29,7 +30,7 @@ recording:
   directory: <FOLDER>            # Directory where log files are stored
   name: <FILE_NAME_PREFIX>       # Prefix for log file names
   topics:
-    - /TOPIC_1                   # List of topics to record
+    - /TOPIC_1                   # List of globs to record
 
 # Launch configuration
 # Defines the groups and units to be launched
@@ -58,6 +59,35 @@ groups:
 
 - Placeholder names like `ARG_A`, `GROUP_1`, `UNIT_A`, etc., should be replaced with project-specific names.
 - Values indicated with `<...>` should be customized according to your project's requirements.
+
+### Example
+An example launch file with a unit named `my_publisher`, which includes a `rate` argument, while the unit `my_subscriber` has no arguments:
+
+```yaml
+# Launch arguments declaration
+args:
+  publish_rate:
+    type: float                
+    default: 1.0
+    help: "Interval in seconds between publishing messages"
+
+---
+
+recording:
+  directory: /tmp
+  name: my_robot
+  topics:
+    - /*
+
+groups:
+  main_group:
+    units:
+      my_publisher:
+        args:
+          rate: {{args.publish_rate}}
+      my_subscriber: {}
+```
+
 
 This structure allows you to define the parameters, components, and behaviors of your application in a flexible and readable manner.
 
